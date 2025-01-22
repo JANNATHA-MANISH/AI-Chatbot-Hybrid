@@ -1,0 +1,20 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore .env file for security reasons
+.env
+
+# Ignore virtual environment folder
+llmenv/
+
+# Ignore .vscode and .idea folders
+.vscode/
+.idea/
+
+# Ignore any test files in app directory
+app/tests/
+app/__pycache__/
+
+app/test.py 

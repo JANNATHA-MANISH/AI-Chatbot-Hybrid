@@ -1,0 +1,242 @@
+:root {
+    --border-rad-lg: 15px;
+    --medium-light-text: #586e88;
+    --light-text: #fcfcfc;
+    --dark-bg: #202021;
+    --accent-color: #24972e;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;  
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: var(--light-text);
+}
+
+main {    
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em; /* Add padding for mobile */
+}
+
+/* Chatbot container */
+.chatbot-container {
+    background-color: var(--dark-bg);
+    width: 100%; /* Full width on mobile */
+    max-width: 400px; /* Limit width on larger screens */
+    min-height: 500px;
+    border-radius: var(--border-rad-lg);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chatbot header */
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.logo {
+    width: 70px; /* Adjust the size as needed */
+    height: 60px; /* Ensure the GIF is square */
+    margin-right: 0.5em;
+    border-radius: 50%; /* Optional: Makes the GIF circular */
+    object-fit: cover; /* Ensures the GIF fits within the dimensions */
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 0.9rem;
+    color: var(--medium-light-text);
+    margin: 0;
+}
+
+.supportId {
+    font-size: 0.8rem;
+    color: var(--medium-light-text);
+    margin-left: auto;
+}
+
+/* Chat conversation container */
+.chatbot-conversation-container {
+    flex: 1; /* Takes up remaining space */
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 300px; /* Set a fixed height for the chat container */
+    padding: 0.5em;
+    background-color: #1a1a1a;
+    border-radius: var(--border-rad-lg);
+    margin-bottom: 1em;
+}
+
+/* Hide scrollbar for a cleaner look */
+.chatbot-conversation-container::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+.chatbot-conversation-container::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+
+.chatbot-conversation-container::-webkit-scrollbar-thumb {
+    background: var(--medium-light-text); /* Scrollbar color */
+    border-radius: 3px; /* Rounded corners */
+}
+
+.chatbot-conversation-container::-webkit-scrollbar-thumb:hover {
+    background: var(--light-text); /* Scrollbar color on hover */
+}
+
+/* Speech bubbles */
+.speech {
+    padding: 0.8em;
+    margin: 0.5em 0;
+    max-width: 80%;
+    border-radius: var(--border-rad-lg);
+    word-wrap: break-word;
+}
+
+.speech-ai {
+    background-color: #2d2d2d;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.speech-human {
+    background-color: #464646;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+/* Input container */
+.chatbot-input-container {
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.8em;
+    border: 1px solid var(--medium-light-text);
+    border-radius: var(--border-rad-lg);
+    background-color: transparent;
+    color: var(--light-text);
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: var(--medium-light-text);
+}
+
+button {
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: var(--border-rad-lg);
+    background-color: #0000008f;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e7a28;
+}
+
+/* Model selection buttons (hidden on mobile) */
+/* Model selection buttons (visible on desktop) */
+.model-buttons {
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.model-btn {
+    flex: 1;
+    padding: 0.6em;
+    border: 1px solid var(--medium-light-text);
+    border-radius: var(--border-rad-lg);
+    background-color: transparent;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    min-width: 90px; /* Ensures buttons don't get too small */
+}
+
+.model-btn i {
+    font-size: 1rem;
+}
+
+.model-btn:hover {
+    background-color: var(--medium-light-text);
+}
+
+.model-btn.selected {
+    background-color: #0000008f;
+}
+
+/* Dropdown for mobile */
+.model-dropdown {
+    display: none; /* Hidden by default */
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid var(--medium-light-text);
+    border-radius: var(--border-rad-lg);
+    background-color: var(--dark-bg); /* Match the chatbot background */
+    color: var(--light-text); /* Match the text color */
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%; /* Position the arrow */
+    background-size: 0.65em auto; /* Size of the arrow */
+}
+
+.model-dropdown:hover {
+    border-color: var(--light-text); /* Change border color on hover */
+}
+
+
+
+.model-dropdown option {
+    background-color: var(--dark-bg); /* Match the chatbot background */
+    color: var(--light-text); /* Match the text color */
+}
+
+.model-dropdown option:hover {
+    background-color: var(--medium-light-text); /* Hover effect for options */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+    .model-buttons {
+        display: none; /* Hide buttons on mobile */
+    }
+
+    .model-dropdown {
+        display: block; /* Show dropdown on mobile */
+        margin-bottom: 1em; /* Add spacing below the dropdown */
+    }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>KnowItAll</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <section class="chatbot-container">
+            <div class="chatbot-header">
+                <img src="images/my_gpt.gif" alt="Chatbot Logo" class="logo"> <!-- Updated to use GIF -->
+                <h1>MJ CHAT</h1>
+                <p class="supportId">HYBRID FLOW</p>
+            </div>
+            <h2>Ask me anything!</h2>
+            <div class="chatbot-conversation-container" id="chatbot-conversation">
+                <div class="speech speech-ai">
+                    How can I help you?
+                </div>
+            </div>
+            <form id="form" class="chatbot-input-container">
+                <input name="user-input" type="text" id="user-input" required placeholder="Type your message..." autocomplete="off">
+                <button id="submit-btn" class="submit-btn">
+                    <i class="fas fa-paper-plane send-btn-icon"></i>
+                </button>
+            </form>
+            <!-- Tab for selecting models -->
+			<div class="model-selection">
+				<!-- Buttons for desktop -->
+				<div class="model-buttons">
+					<button class="model-btn" id="chatgpt-btn"><i class="fab fa-openai"></i> ChatGPT</button>
+					<button class="model-btn" id="gemini-btn"><i class="fas fa-robot"></i> Gemini</button>
+					<button class="model-btn" id="deepseek-btn"><i class="fas fa-search"></i> DeepSeek</button>
+					<button class="model-btn" id="groq-btn"><i class="fas fa-bolt"></i> Groq</button>
+					<button class="model-btn" id="llama-btn"><i class="fas fa-brain"></i> LLM</button>
+				</div>
+			
+				<!-- Dropdown for mobile -->
+				<select id="model-dropdown" class="model-dropdown">
+					<option value="chatgpt">ChatGPT</option>
+					<option value="gemini">Gemini</option>
+					<option value="deepseek">DeepSeek</option>
+					<option value="groq">Groq</option>
+					<option value="llama">LLM</option>
+				</select>
+			</div>
+            <!-- Loading spinner -->
+            <div id="loading-indicator" class="loading-indicator" style="display: none;"></div>
+        </section>
+    </main>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+
+#pip install -r requirements.txt
+python-dotenv
+google-generativeai
+psutil
+torch
+transformers
+pydantic
+fastapi
+uvicorn
+
+#run this commads
+
+#.\llmenv\Scripts\activate 
+#uvicorn app.main:app --reload
+#.env set your own model
+#pip install accelerate
