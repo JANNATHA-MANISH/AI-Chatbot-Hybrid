@@ -1,7 +1,9 @@
 # AI Chatbot (Hybrid)
 
+<img src="frontend/IMAGES/chatbot_img.png" width="300" height="300" />
 
-<img src="frontend/IMAGES/chatbot-ezgif.com-video-to-gif-converter.gif" width="500" height="300" />
+<img src="frontend/IMAGES/chatbot-ezgif.com-video-to-gif-converter.gif" width="300" height="300" />
+
 ## Overview
 
 This project involves the development of an advanced hybrid AI chatbot that integrates multiple AI models to enhance interaction capabilities. The chatbot provides users with the flexibility to choose between different AI models, including OpenAI, Gemini, DeepSeek, GorQ APIs, and a locally hosted Large Language Model (LLM) powered by HuggingFace Transformers. The system is designed with a user-friendly front-end interface and a robust backend to ensure seamless processing and scalability.
