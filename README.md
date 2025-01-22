@@ -1,8 +1,9 @@
 # AI Chatbot (Hybrid)
 
-<img src="frontend/IMAGES/chatbot_img.png" width="300" height="300" />
-
-<img src="frontend/IMAGES/chatbot-ezgif.com-video-to-gif-converter.gif" width="300" height="300" />
+<div style="display: flex; justify-content: space-around;">
+  <img src="frontend/IMAGES/chatbot_img.png" height="350" style="width: auto;" />
+  <img src="frontend/IMAGES/chatbot-ezgif.com-video-to-gif-converter.gif" height="350" style="width: auto;" />
+</div>
 
 ## Overview
 
